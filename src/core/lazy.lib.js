@@ -9,6 +9,8 @@ import {
   Col,
   Menu,
   Modal,
+  Icon,
+  Select,
   message,
   notification
 } from 'ant-design-vue'
@@ -22,6 +24,8 @@ Vue.use(Row)
 Vue.use(Col)
 Vue.use(Menu)
 Vue.use(Modal)
+Vue.use(Icon)
+Vue.use(Select)
 
 Vue.prototype.$message = message
 Vue.prototype.$notification = notification
