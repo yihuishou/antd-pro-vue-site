@@ -1,8 +1,5 @@
 <template>
-  <div class="home-wrapper">
-    <banner/>
-    <page1/>
-  </div>
+
 </template>
 
 <script>

@@ -23,9 +23,11 @@ export default i18n
 
 const loadedLanguages = [defaultLanguage]
 
-if (defaultLanguage !== localStorage.lang) {
+/*
+if (defaultLanguage !== Vue.storage.get('lang')) {
   loadLanguageAsync(localStorage.lang)
 }
+*/
 
 function setI18nLanguage (lang) {
   i18n.locale = lang
@@ -37,7 +39,7 @@ function setI18nLanguage (lang) {
 export function loadLanguageAsync (lang = defaultLanguage) {
   return new Promise(resolve => {
     // 缓存语言设置
-    localStorage.lang = lang
+    Vue.storage.set('lang', lang)
     if (i18n.locale !== lang) {
       if (!loadedLanguages.includes(lang)) {
         return import(/* webpackChunkName: "lang-[request]" */ `./lang/${lang}`).then(msg => {

@@ -1,20 +1,20 @@
 <template>
-  <div class="page-wrapper">
-    <a-header/>
-    <a-home/>
+  <div class="home-wrapper">
+    <banner/>
+    <page1/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import AHeader from '@/components/Header'
-import AHome from '@/components/Home'
+import Banner from '@/components/Banner'
+import Page1 from '@/components/Page1'
 
 export default {
   name: 'home',
   components: {
-    AHeader,
-    AHome
+    Banner,
+    Page1
   }
 }
 </script>

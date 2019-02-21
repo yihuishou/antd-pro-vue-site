@@ -6,12 +6,14 @@
       </div>
       <h1 class="" style="opacity: 1; transform: translate(0px, 0px);">ANTV IDEAL</h1>
       <p style="opacity: 1; transform: translate(0px, 0px);">
-        <span>开箱即用的中台前端/设计解决方案</span>
+        <span>{{ $t('banner.desc') }}</span>
       </p>
       <div class="button-wrapper">
-        <a>
-          <a-button type="primary">预览</a-button>
-          <a-button style="margin: 0px 16px;">开始使用</a-button>
+        <a href="https://pro.loacg.com">
+          <a-button type="primary">{{ $t('banner.preview') }}</a-button>
+        </a>
+        <a @click="$router.push({ name: 'docs' })">
+          <a-button style="margin: 0 16px;">{{ $t('banner.getter') }}</a-button>
         </a>
       </div>
     </div>

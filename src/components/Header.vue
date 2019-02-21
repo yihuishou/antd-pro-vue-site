@@ -36,9 +36,21 @@
           </div>
           <div id="menu">
             <a-menu mode="horizontal" :selectedKeys="selectedKeys" @select="handleSelect">
-              <a-menu-item key="home">{{ $t('header.Menu.home') }}</a-menu-item>
-              <a-menu-item key="docs">{{ $t('header.Menu.docs') }}</a-menu-item>
-              <a-menu-item key="components">{{ $t('header.Menu.components') }}</a-menu-item>
+              <a-menu-item key="home">
+                <router-link :to="{ name: 'home' }">
+                  {{ $t('header.Menu.home') }}
+                </router-link>
+              </a-menu-item>
+              <a-menu-item key="docs">
+                <router-link :to="{ name: 'docs' }">
+                  <span>{{ $t('header.Menu.docs') }}</span>
+                </router-link>
+              </a-menu-item>
+              <a-menu-item key="components">
+                <router-link :to="{ name: 'components' }">
+                  <span>{{ $t('header.Menu.components') }}</span>
+                </router-link>
+              </a-menu-item>
             </a-menu>
           </div>
         </div>
@@ -58,7 +70,15 @@ export default {
     return {
       data: [],
       value: undefined,
-      selectedKeys: ['home']
+      selectedKeys: []
+    }
+  },
+  created () {
+    this.updateMenu()
+  },
+  watch: {
+    $route () {
+      this.updateMenu()
     }
   },
   methods: {
@@ -71,6 +91,10 @@ export default {
     handleChange (value) {
       console.log(value)
       this.value = value
+    },
+    updateMenu () {
+      const routes = this.$route.matched.concat()
+      routes.length > 0 && (this.selectedKeys = [routes.pop().name])
     },
     langSwitch () {
       if (this.currentLang === defaultLanguage) {

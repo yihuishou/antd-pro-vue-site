@@ -9,5 +9,10 @@ export default {
       preview: 'Preview'
     },
     searchPlaceholder: 'search..'
+  },
+  banner: {
+    preview: 'Preview',
+    getter: 'Getting Started',
+    desc: 'Out-of-box UI solution for enterprise applications'
   }
 }

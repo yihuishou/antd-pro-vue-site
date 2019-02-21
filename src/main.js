@@ -12,7 +12,7 @@ new Vue({
   router,
   store,
   i18n,
-  mounted () {
+  beforeCreate () {
     bootstrap.init()
   },
   render: h => h(App)
