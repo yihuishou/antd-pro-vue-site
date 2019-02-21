@@ -2,10 +2,10 @@
   <div id="header" class="header">
     <a-row>
       <a-col :xs="24" :sm="24" :md="8" :lg="8" :xl="5" :xxl="4">
-        <a id="logo" href="/">
+        <router-link id="logo" :to="{ name: 'home' }">
           <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="logo"/>
           <span>Antv IDEAL</span>
-        </a>
+        </router-link>
       </a-col>
       <a-col :xs="0" :sm="0" :md="16" :lg="16" :xl="19" :xxl="20">
         <div id="search-box">

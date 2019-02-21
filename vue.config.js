@@ -26,6 +26,8 @@ module.exports = {
     }
   },
   devServer: {
+    port: 9000,
+    compress: true,
     proxy: {
       '/gateway': {
         target: 'https://example.com/api',
