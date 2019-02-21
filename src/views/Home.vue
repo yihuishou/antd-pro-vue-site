@@ -15,6 +15,17 @@ export default {
   components: {
     Banner,
     Page1
+  },
+  mounted () {
+    this.toggleMain()
+  },
+  beforeDestroy () {
+    this.toggleMain(false)
+  },
+  methods: {
+    toggleMain (bool = true) {
+      this.$parent.setMainClass(bool)
+    }
   }
 }
 </script>

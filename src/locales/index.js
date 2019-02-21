@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
+import config from '@/config/default.config'
 import enUS from './lang/en-US'
 
 Vue.use(VueI18n)
-
-// 默认语言
-export const defaultLanguage = 'en-US'
 
 const messages = {
   'en-US': {
@@ -14,14 +12,14 @@ const messages = {
 }
 
 const i18n = new VueI18n({
-  locale: defaultLanguage,
-  fallbackLocale: defaultLanguage,
+  locale: config.defaultLang,
+  fallbackLocale: config.defaultLang,
   messages
 })
 
 export default i18n
 
-const loadedLanguages = [defaultLanguage]
+const loadedLanguages = [config.defaultLang]
 
 /*
 if (defaultLanguage !== Vue.storage.get('lang')) {
@@ -36,7 +34,7 @@ function setI18nLanguage (lang) {
   return lang
 }
 
-export function loadLanguageAsync (lang = defaultLanguage) {
+export function loadLanguageAsync (lang = config.defaultLang) {
   return new Promise(resolve => {
     // 缓存语言设置
     Vue.storage.set('lang', lang)

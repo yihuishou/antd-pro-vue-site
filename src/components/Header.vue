@@ -61,7 +61,7 @@
 
 <script>
 import { mixin } from '@/store/mixin'
-import { defaultLanguage } from '@/locales'
+import config from '@/config/default.config'
 
 export default {
   name: 'Header',
@@ -97,7 +97,7 @@ export default {
       routes.length > 0 && (this.selectedKeys = [routes.pop().name])
     },
     langSwitch () {
-      if (this.currentLang === defaultLanguage) {
+      if (this.currentLang === config.defaultLang) {
         this.setLang('zh-CN')
       } else {
         this.setLang('en-US')

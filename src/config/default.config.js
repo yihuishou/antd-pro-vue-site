@@ -1,5 +1,5 @@
 export default {
-  defaultLang: 'zh',
+  defaultLang: 'en-US',
   storage: {
     namespace: 'antv__', // key prefix
     name: 'storage', // name variable Vue.[ls] or this.[$ls],
