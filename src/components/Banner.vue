@@ -28,7 +28,3 @@ export default {
   name: 'Banner'
 }
 </script>
-
-<style scoped>
-
-</style>
