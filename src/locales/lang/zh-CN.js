@@ -7,6 +7,7 @@ export default {
       otherVersion: 'v1',
       langSwitch: 'English',
       preview: '预览'
-    }
+    },
+    searchPlaceholder: '搜索..'
   }
 }

@@ -13,7 +13,7 @@
           <a-select
             showSearch
             :value="value"
-            placeholder="搜索..."
+            :placeholder="$t('header.searchPlaceholder')"
             style="width: 200px"
             :defaultActiveFirstOption="false"
             :showArrow="false"
@@ -28,17 +28,17 @@
         <div class="header-meta">
           <div id="preview">
             <a id="preview-button" href="https://pro.loacg.com" ref="noopener noreferrer">
-              <a-button icon="eye-o">预览</a-button>
+              <a-button icon="eye-o">{{ $t('header.Menu.preview') }}</a-button>
             </a>
           </div>
           <div id="lang">
-            <a-button>English</a-button>
+            <a-button @click="langSwitch">{{ $t('header.Menu.langSwitch') }}</a-button>
           </div>
           <div id="menu">
-            <a-menu mode="horizontal">
-              <a-menu-item key="home">首页</a-menu-item>
-              <a-menu-item key="docs">文档</a-menu-item>
-              <a-menu-item key="comp">组件</a-menu-item>
+            <a-menu mode="horizontal" :selectedKeys="selectedKeys" @select="handleSelect">
+              <a-menu-item key="home">{{ $t('header.Menu.home') }}</a-menu-item>
+              <a-menu-item key="docs">{{ $t('header.Menu.docs') }}</a-menu-item>
+              <a-menu-item key="components">{{ $t('header.Menu.components') }}</a-menu-item>
             </a-menu>
           </div>
         </div>
@@ -48,21 +48,36 @@
 </template>
 
 <script>
+import { mixin } from '@/store/mixin'
+import { defaultLanguage } from '@/locales'
+
 export default {
   name: 'Header',
+  mixins: [mixin],
   data () {
     return {
       data: [],
-      value: undefined
+      value: undefined,
+      selectedKeys: ['home']
     }
   },
   methods: {
+    handleSelect ({ selectedKeys }) {
+      this.selectedKeys = selectedKeys
+    },
     handleSearch (value) {
 
     },
     handleChange (value) {
       console.log(value)
       this.value = value
+    },
+    langSwitch () {
+      if (this.currentLang === defaultLanguage) {
+        this.setLang('zh-CN')
+      } else {
+        this.setLang('en-US')
+      }
     }
   }
 }
