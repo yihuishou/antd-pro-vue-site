@@ -39,7 +39,7 @@
         </a-menu>
       </a-col>
       <a-col class="main-container" :xs="24" :sm="24" :md="24" :lg="18" :xl="19" :xxl="20">
-        22
+        Coming soon
       </a-col>
     </a-row>
   </div>
