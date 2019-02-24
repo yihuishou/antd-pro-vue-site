@@ -3,8 +3,8 @@
     <a-row>
       <a-col :xs="24" :sm="24" :md="8" :lg="8" :xl="5" :xxl="4">
         <router-link id="logo" :to="{ name: 'home' }">
-          <img src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg" alt="logo"/>
-          <span>Antv IDEAL</span>
+          <img src="https://cdn.nlark.com/yuque/0/2019/png/87084/1550242977163-assets/web-upload/5bdc08bb-58a1-4312-8380-d43b1590154c.png" alt="logo"/>
+          <span>Ant Design Pro of Vue</span>
         </router-link>
       </a-col>
       <a-col :xs="0" :sm="0" :md="16" :lg="16" :xl="19" :xxl="20">
@@ -27,7 +27,7 @@
         </div>
         <div class="header-meta">
           <div id="preview">
-            <a id="preview-button" href="https://pro.loacg.com" ref="noopener noreferrer">
+            <a id="preview-button" href="https://preview.pro.loacg.com" ref="noopener noreferrer">
               <a-button icon="eye-o">{{ $t('header.Menu.preview') }}</a-button>
             </a>
           </div>

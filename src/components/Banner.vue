@@ -4,12 +4,12 @@
       <div class="title-line-wrapper" style="opacity: 1; transform: translate(0px, 0px);">
         <div class="title-line" style="transform: translateX(-64px);"></div>
       </div>
-      <h1 class="" style="opacity: 1; transform: translate(0px, 0px);">ANTV IDEAL</h1>
+      <h1 class="" style="opacity: 1; transform: translate(0px, 0px);">ANTD PRO VUE</h1>
       <p style="opacity: 1; transform: translate(0px, 0px);">
         <span>{{ $t('banner.desc') }}</span>
       </p>
       <div class="button-wrapper">
-        <a href="https://pro.loacg.com">
+        <a href="https://preview.pro.loacg.com">
           <a-button type="primary">{{ $t('banner.preview') }}</a-button>
         </a>
         <a @click="$router.push({ name: 'docs' })">
