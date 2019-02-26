@@ -9,37 +9,11 @@
           :selectedKeys="selectedKeys"
           :inlineIndent="54"
         >
-          <a-menu-item key="1">
-            <span>AvatarList</span>
-            <span class="chinese">用户头像列表</span>
-          </a-menu-item>
-          <a-menu-item key="2">
-            <span>Charts</span>
-            <span class="chinese">图表</span>
-          </a-menu-item>
-          <a-menu-item key="3">
-            <span>CountDown</span>
-            <span class="chinese">倒计时</span>
-          </a-menu-item>
-          <a-menu-item key="4">
-            <span>FooterToolbar</span>
-            <span class="chinese">底部工具栏</span>
-          </a-menu-item>
-          <a-menu-item key="5">
-            <span>NumberInfo</span>
-            <span class="chinese">数据文本</span>
-          </a-menu-item>
-          <a-menu-item key="6">
-            <span>Ellipsis</span>
-            <span class="chinese">文本自动省略号</span>
-          </a-menu-item>
-          <a-menu-item key="7">
-            <span>Result</span>
-            <span class="chinese">处理结果</span>
-          </a-menu-item>
-          <a-menu-item key="8">
-            <span>Trend</span>
-            <span class="chinese">趋势标记</span>
+          <a-menu-item v-for="item in routeMap" :key="item.url">
+            <router-link :to="{ name: 'components', params: { page: item.url } }">
+              <span>{{ item.title }}</span>
+              <span v-if="isCN" class="chinese">{{ item.cnTitle }}</span>
+            </router-link>
           </a-menu-item>
         </a-menu>
       </a-col>
@@ -51,17 +25,82 @@
 </template>
 
 <script>
+import { mixin } from '@/store/mixin'
+
+const routeMap = [
+  {
+    title: 'AvatarList',
+    cnTitle: '用户头像列表',
+    url: 'avatar-list'
+  },
+  {
+    title: 'Charts',
+    cnTitle: '图表',
+    url: 'charts'
+  },
+  {
+    title: 'CountDown',
+    cnTitle: '倒计时',
+    url: 'count-down'
+  },
+  {
+    title: 'FooterToolbar',
+    cnTitle: '底部工具栏',
+    url: 'footer-toolbar'
+  },
+  {
+    title: 'NumberInfo',
+    cnTitle: '数据文本',
+    url: 'number-info'
+  },
+  {
+    title: 'Ellipsis',
+    cnTitle: '文本自动省略号',
+    url: 'ellipsis'
+  },
+  {
+    title: 'Result',
+    cnTitle: '处理结果',
+    url: 'result'
+  },
+  {
+    title: 'Trend',
+    cnTitle: '趋势标记',
+    url: 'trend'
+  }
+]
 export default {
   name: 'Components',
+  mixins: [mixin],
   data () {
     return {
-      selectedKeys: ['1']
+      selectedKeys: [],
+      routeMap
     }
+  },
+  computed: {
+    isCN () {
+      return this.currentLang === 'zh-CN'
+    }
+  },
+  created () {
+    const { $route: { params } } = this
+    const page = params.page || 'avatar-list'
+    this.$router.push({ name: 'components', params: { page: page } })
+    this.updateMenu()
   },
   methods: {
     handleClick (e) {
-      console.log('click', e)
       this.selectedKeys = [e.key]
+    },
+    updateMenu () {
+      const { $route: { params } } = this
+      this.selectedKeys = [params.page]
+    }
+  },
+  watch: {
+    $route () {
+      this.updateMenu()
     }
   }
 }

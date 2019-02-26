@@ -7,7 +7,7 @@ const constantRouterMap = [
     component: Home
   },
   {
-    path: '/docs',
+    path: '/docs/:page?',
     name: 'docs',
     // route level code-splitting
     // this generates a separate chunk (docs.[hash].js) for this route
@@ -15,7 +15,7 @@ const constantRouterMap = [
     component: () => import(/* webpackChunkName: "docs" */ '@/views/Docs')
   },
   {
-    path: '/components',
+    path: '/components/:page?',
     name: 'components',
     // route level code-splitting
     // this generates a separate chunk (components.[hash].js) for this route
