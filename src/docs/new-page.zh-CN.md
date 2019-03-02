@@ -6,13 +6,13 @@
 
 在 `src/views` 下新建页面的`vue`文件，如果相关页面有多个，可以新建一个文件夹来放置相关文件。
 
-![新增页面](/assets/newPage1.png)
+![新增页面](/assets/new_page1.png)
 
 
 
 样式文件默认使用 [CSS Modules](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，如果需要，你可以在`vue`文件的`style`标签头部引入 [antd 样式变量文件](https://github.com/vueComponent/ant-design-vue/blob/master/components/style/themes/default.less)：
 
-![引用样式文件](/assets/newPage2.png)
+![引用样式文件](/assets/new_page2.png)
 
 ```css
 @import '~ant-design-vue/lib/style/themes/default.less';
@@ -24,7 +24,7 @@
 
 加入菜单和路由的方式请参照 [路由和菜单 - 添加路由/菜单](https://pro.loacg.com/docs/router-and-nav) 中的介绍完成。加好后，访问 `http://localhost:8080/new` 就可以看到新增的页面了。
 
-![页面展示](/assets/newPage3.png)
+![页面展示](/assets/new_page3.png)
 
 
 
