@@ -18,7 +18,7 @@
 
 - `hideChildrenInMenu` 用于隐藏不需要在菜单中展示的子路由。用法可以查看 `分步表单` 的配置。
 - `hidden` 可以在菜单中不展示这个路由，包括子路由。效果可以查看 `dashboard/monitor`页面。
-- `meta.name` 和 `meta.icon`分别代表生成菜单项的文本和图标。
+- `meta.title` 和 `meta.icon`分别代表生成菜单项的文本和图标。
 - `meta.permission` 用来配置这个路由的权限，如果配置了将会验证当前用户的权限，并决定是否展示。
 - `meta.hidden` 可以强制子菜单不显示在菜单上(和父级 `hideChildrenInMenu` 配合)
 - `meta.hiddenHeaderContent` 可以强制当前页面不显示 [PageHeader](https://github.com/sendya/ant-design-pro-vue/blob/master/src/components/layout/PageHeader.vue#L14) 组件中的页面带的 面包屑和页面标题栏
@@ -70,3 +70,55 @@
 }
 
 ```
+
+路由配置项 eg: 
+```js
+/**
+ * 路由配置说明：
+ * 建议：sider menu 请不要超过三级菜单，若超过三级菜单，则应该设计为顶部主菜单 配合左侧次级菜单
+ *
+ **/
+ {
+  redirect: noredirect,
+  name: 'router-name',
+  hidden: true,
+  meta: {
+    title: 'title',
+    icon: 'a-icon',
+    keepAlive: true,
+    hiddenHeaderContent: true,
+  }
+}
+```
+
+
+### API
+
+`{ Route }` 对象
+
+| 参数               | 说明                                              | 类型    | 默认值 |
+| ------------------ | ------------------------------------------------- | ------- | ------ |
+| hidden             | 控制路由是否显示在 sidebar                        | boolean | false  |
+| redirect           | 重定向地址, 访问这个路由时,自定进行重定向         | string  | -      |
+| name               | 路由名称, 必须设置,且不能重名                     | string  | -      |
+| meta               | 路由元信息（路由附带扩展信息）                    | object  | {}     |
+| hideChildrenInMenu | 强制菜单显示为Item而不是SubItem(配合 meta.hidden) | boolean | -      |
+
+`{ Meta }` 路由元信息对象
+
+| 参数                | 说明                                                         | 类型         | 默认值 |
+| ------------------- | ------------------------------------------------------------ | ------------ | ------ |
+| title               | 路由标题, 用于显示面包屑, 页面标题 *推荐设置                 | string       | -      |
+| icon                | 路由在 menu 上显示的图标                                     | [string,svg] | -      |
+| keepAlive           | 缓存该路由                                                   | boolean      | false  |
+| hidden              | 用于隐藏菜单时，提供递归到父菜单显示 选中菜单项_（可参考 个人页 配置方式）_ | boolean      | false  |
+| hiddenHeaderContent | *特殊 隐藏 [PageHeader](https://github.com/sendya/ant-design-pro-vue/blob/master/src/components/layout/PageHeader.vue#L14) 组件中的页面带的 面包屑和页面标题栏 | boolean      | false  |
+| permission          | 与项目提供的权限拦截匹配的权限，如果不匹配，则会被禁止访问该路由页面 | array        | []     |
+
+> 路由自定义 `Icon` 请引入自定义 `svg` Icon 文件，然后传递给路由的 `meta.icon` 参数即可
+
+
+
+> 请注意 `component: () => import('..') ` 方式引入路由的页面组件为 懒加载模式。具体可以看 [Vue 官方文档](https://router.vuejs.org/zh/guide/advanced/lazy-loading.html)  
+> 增加新的路由应该增加在 '/' (index) 路由的 `children` 内  
+> `permission` 可以进行自定义修改，只需要对这个模块进行自定义修改即可 [src/store/modules/permission.js#L10](https://github.com/sendya/ant-design-pro-vue/blob/master/src/store/modules/permission.js#L10)
