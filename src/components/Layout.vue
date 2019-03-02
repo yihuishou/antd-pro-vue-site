@@ -8,7 +8,7 @@ const docsList = [
   { key: 'i18n', enTitle: 'Internationalization', title: '国际化' },
   { key: 'faq', enTitle: 'FAQ', title: '常见问题' },
   { key: 'sponsor', enTitle: 'Sponsor', title: '支持我们' },
-  { key: 'download', enTitle: 'Download Design Resources', title: '下载设计资源' },
+  { key: 'download', enTitle: 'Download Design Resources', title: '下载设计资源' }
 ]
 
 export default {
@@ -21,25 +21,25 @@ export default {
   methods: {
     getDocsMenu (pagesKey) {
       const docsMenu = []
-      docsList.forEach({ key, enTitle, title }, index) => {
+      docsList.forEach(({ key, enTitle, title }, index) => {
         const k = `${key}-cn`
         pagesKey.push({
           name: k,
           url: `/docs/vue/${k}/`,
           title: title
         })
-        docsMenu.push(<a-menu-item key={k}
+        docsMenu.push(<a-menu-item key={k}>
           <router-link to={`/docs/vue/${k}/`}>{title}</router-link>
         </a-menu-item>)
         return docsMenu
-      }
+      })
     }
   },
   render () {
-      return (
-        <div class='page-wrapper'>
-        </div>
-      )
+    return (
+      <div class='page-wrapper'>
+      </div>
+    )
   }
 }
 </script>
