@@ -18,7 +18,8 @@
         </a-menu>
       </a-col>
       <a-col class="main-container" :xs="24" :sm="24" :md="24" :lg="18" :xl="19" :xxl="20">
-        Coming soon
+        <div class="markdown" v-html="marked(text)">
+        </div>
       </a-col>
     </a-row>
   </div>
@@ -26,7 +27,34 @@
 
 <script>
 import { mixin } from '@/store/mixin'
+import marked from 'marked'
 
+const mdImport = (name, lang = 'en-US') => {
+  return import(`../docs/components/${name}.${lang}.md`)
+}
+
+const renderer = new marked.Renderer()
+renderer.heading = function (text, level) {
+  return '<h' +
+    level +
+    ' id="' +
+    text.replace(/[^\w]+/g, '-') +
+    '">' +
+    text +
+    '</h' +
+    level +
+    '>\n'
+}
+marked.setOptions({
+  renderer,
+  gfm: true,
+  tables: true,
+  breaks: true,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: true
+})
 const routeMap = [
   {
     title: 'AvatarList',
@@ -67,6 +95,26 @@ const routeMap = [
     title: 'Trend',
     cnTitle: '趋势标记',
     url: 'trend'
+  },
+  {
+    title: 'Table',
+    cnTitle: '数据表格',
+    url: 's-table'
+  },
+  {
+    title: 'IconSelector',
+    cnTitle: '图标选择器',
+    url: 'icon-selector'
+  },
+  {
+    title: 'TwoStepCaptcha',
+    cnTitle: '两步验证 FMA',
+    url: 'two-step-captcha'
+  },
+  {
+    title: 'ActionPermission',
+    cnTitle: '操作权限',
+    url: 'action-permission'
   }
 ]
 export default {
@@ -75,7 +123,9 @@ export default {
   data () {
     return {
       selectedKeys: [],
-      routeMap
+      routeMap,
+      marked,
+      text: ''
     }
   },
   computed: {
@@ -87,15 +137,25 @@ export default {
     const { $route: { params } } = this
     const page = params.page || 'avatar-list'
     this.$router.push({ name: 'components', params: { page: page } })
-    this.updateMenu()
+    if (page && page !== '') {
+      this.updateMenu()
+    }
   },
   methods: {
     handleClick (e) {
       this.selectedKeys = [e.key]
     },
     updateMenu () {
-      const { $route: { params } } = this
+      const { $route: { params }, $message } = this
       this.selectedKeys = [params.page]
+      const md = mdImport(params.page, 'zh-CN')
+      console.log('import markdown:', md)
+      md.then((...rest) => {
+        this.text = rest[0].default
+      }).catch(err => {
+        console.log('import err', err)
+        $message.error(err.message)
+      })
     }
   },
   watch: {
