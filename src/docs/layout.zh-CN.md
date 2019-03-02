@@ -10,11 +10,11 @@
 
 - BasicLayout：基础页面布局，包含了头部导航，侧边栏和通知栏：
 
-<img src="https://gw.alipayobjects.com/zos/rmsportal/oXmyfmffJVvdbmDoGvuF.png" />
+![BasicLayout](/assets/basic_layout.jpg)  
 
 - UserLayout：抽离出用于登陆注册页面的通用布局
 
-<img src="https://gw.alipayobjects.com/zos/rmsportal/mXsydBXvLqBVEZLMssEy.png" />
+![UserLayout](/assets/user_layout.jpg)  
 
 - PageView：基础布局，包含了面包屑，和中间内容区 (`slot`)
 - RouterView：空布局，专门为了二级菜单内容区自定义
