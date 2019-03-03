@@ -19,7 +19,7 @@ export default {
 
 
 
-## 代码演示  [demo](https://pro.loacg.com/test/home)
+## 代码演示  [demo](https://preview.pro.loacg.com/test/home)
 
 ```html
 <avatar-list size="mini">

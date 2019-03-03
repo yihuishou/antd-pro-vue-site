@@ -21,6 +21,11 @@ const constantRouterMap = [
     // this generates a separate chunk (components.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "components" */ '@/views/Components')
+  },
+  {
+    path: 'https://github.com/sendya/ant-design-pro-vue',
+    name: 'github_repo_url',
+    meta: { target: '_blank' }
   }
 ]
 

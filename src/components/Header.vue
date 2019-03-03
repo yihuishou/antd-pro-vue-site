@@ -51,6 +51,11 @@
                   <span>{{ $t('header.Menu.components') }}</span>
                 </router-link>
               </a-menu-item>
+              <a-menu-item key="github_repo">
+                <router-link target="_blank" :to="{ name: 'github_repo_url' }">
+                  <span>{{ $t('header.Menu.githubRepo') }}</span>
+                </router-link>
+              </a-menu-item>
             </a-menu>
           </div>
         </div>
