@@ -4,7 +4,7 @@ export default {
       home: '首页',
       docs: '文档',
       components: '组件',
-      githubRepo: '全球最大的同性交流社区',
+      githubRepo: 'Github',
       otherVersion: 'v1',
       langSwitch: 'English',
       preview: '预览'
