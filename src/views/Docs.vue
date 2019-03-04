@@ -205,7 +205,7 @@ export default {
         this.text = rest[0].default
       }).catch(err => {
         console.log('import err', err)
-        $message.error(err.message)
+        $message.error(<span>无法找到改文档或者该文档尚未完成。如果你是开发者，可以获取 <code style="background: #ccc">{err.message}</code> 并完成该文档</span>)
       })
     }
   },
