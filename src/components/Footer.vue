@@ -40,7 +40,7 @@
       </a-row>
     </div>
     <div class="footer-bar">
-      Made with <span class="heart">❤</span> by <a target="_blank" rel="noopener noreferrer" href="https://i.loacg.com/">Sendya</a> · Inspired <a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog"><span>AFX</span></a> · <a target="_blank" rel="noopener noreferrer" href="https://vue.ant.design/docs/vue/introduce-cn/"><span>Ant Design of Vue</span></a>
+      Made with <span class="heart">❤</span> by <a target="_blank" rel="noopener noreferrer" href="https://i.loacg.com/">Sendya</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/kokoroli" alt="kokoroli">柚子</a> · Inspired <a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog"><span>AFX</span></a> · <a target="_blank" rel="noopener noreferrer" href="https://vue.ant.design/docs/vue/introduce-cn/"><span>Ant Design of Vue</span></a>
     </div>
   </div>
 </template>
