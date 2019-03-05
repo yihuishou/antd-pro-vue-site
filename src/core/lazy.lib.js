@@ -11,6 +11,7 @@ import {
   Modal,
   Icon,
   Select,
+  BackTop,
   message,
   notification
 } from 'ant-design-vue'
@@ -26,6 +27,7 @@ Vue.use(Menu)
 Vue.use(Modal)
 Vue.use(Icon)
 Vue.use(Select)
+Vue.use(BackTop)
 
 Vue.prototype.$message = message
 Vue.prototype.$notification = notification
