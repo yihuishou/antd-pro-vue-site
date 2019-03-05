@@ -9,7 +9,7 @@
           :selectedKeys="selectedKeys"
           :inlineIndent="54"
         >
-          <a-menu-item v-for="item in routeMap" :key="item.url">
+          <a-menu-item v-for="item in componentsRouterMap" :key="item.url">
             <router-link :to="{ name: 'components', params: { page: item.url } }">
               <span>{{ item.title }}</span>
               <span v-if="isCN" class="chinese">{{ item.cnTitle }}</span>
@@ -28,6 +28,7 @@
 
 <script>
 import { mixin } from '@/store/mixin'
+import { componentsRouterMap } from '@/config/router.config'
 import marked from 'marked'
 
 const mdImport = (name, lang = 'en-US') => {
@@ -56,75 +57,14 @@ marked.setOptions({
   smartLists: true,
   smartypants: true
 })
-const routeMap = [
-  {
-    title: 'AvatarList',
-    cnTitle: '用户头像列表',
-    url: 'avatar-list'
-  },
-  {
-    title: 'Charts',
-    cnTitle: '图表',
-    url: 'charts'
-  },
-  {
-    title: 'CountDown',
-    cnTitle: '倒计时',
-    url: 'count-down'
-  },
-  {
-    title: 'FooterToolbar',
-    cnTitle: '底部工具栏',
-    url: 'footer-toolbar'
-  },
-  {
-    title: 'NumberInfo',
-    cnTitle: '数据文本',
-    url: 'number-info'
-  },
-  {
-    title: 'Ellipsis',
-    cnTitle: '文本自动省略号',
-    url: 'ellipsis'
-  },
-  {
-    title: 'Result',
-    cnTitle: '处理结果',
-    url: 'result'
-  },
-  {
-    title: 'Trend',
-    cnTitle: '趋势标记',
-    url: 'trend'
-  },
-  {
-    title: 'Table',
-    cnTitle: '数据表格',
-    url: 's-table'
-  },
-  {
-    title: 'IconSelector',
-    cnTitle: '图标选择器',
-    url: 'icon-selector'
-  },
-  {
-    title: 'TwoStepCaptcha',
-    cnTitle: '两步验证 FMA',
-    url: 'two-step-captcha'
-  },
-  {
-    title: 'ActionPermission',
-    cnTitle: '操作权限',
-    url: 'action-permission'
-  }
-]
+
 export default {
   name: 'Components',
   mixins: [mixin],
   data () {
     return {
       selectedKeys: [],
-      routeMap,
+      componentsRouterMap,
       marked,
       text: ''
     }
