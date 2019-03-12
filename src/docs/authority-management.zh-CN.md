@@ -69,7 +69,7 @@ const servicePermissionMap = [
 // router.config.js
 import { UserLayout, BasicLayout, RouteView, BlankLayout, PageView } from '@/components/layouts'
 
-const constantRouterComponents = [
+const constantRouterComponents = {
     // 基础页面 layout 必须引入
     BasicLayout: BasicLayout,
     BlankLayout: BlankLayout,
@@ -84,7 +84,7 @@ const constantRouterComponents = [
 	role: () => import('@/views/system/role'),
 	permission: () => import('@/views/system/permission')
 	// ...more
-]
+}
 
 // asyncRouter.js
 // 构建动态的路由
