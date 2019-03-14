@@ -37,12 +37,16 @@ const mdImport = (name, lang = 'en-US') => {
 
 const renderer = new marked.Renderer()
 renderer.heading = function (text, level) {
+  // text.replace(/[^\w]+/g, '-') +
+  // 生产锚点 a 链接
+  const vtext = text.replace(/^\s+|\s+$/g, '-')
+  const vhtml = `<a href="#${vtext}" aria-hidden="true" class="anchor">#</a>`
   return '<h' +
     level +
     ' id="' +
-    text.replace(/[^\w]+/g, '-') +
+    vtext +
     '">' +
-    text +
+    text + '\n' + vhtml +
     '</h' +
     level +
     '>\n'
@@ -64,13 +68,6 @@ export default {
   },
   mixins: [mixin],
   data () {
-    /*
-    let text = md
-
-    text = text || ''
-    text = text.split('\n').map(t => t.trim()).join('\n')
-*/
-
     return {
       selectedKeys: [],
       docsRouterMap,
@@ -81,7 +78,7 @@ export default {
   created () {
     const { $route: { params } } = this
     const page = params.page || 'getting-started'
-    this.$router.push({ name: 'docs', params: { page: page } })
+    this.$router.push({ name: 'docs', params: { page: page, hash: this.$route.hash } })
     if (page && page !== '') {
       this.updateMenu()
     }
