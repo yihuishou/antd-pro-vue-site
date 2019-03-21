@@ -1,4 +1,4 @@
-# Table 重封装组件说明
+# S-Table
 
 封装说明
 ----
@@ -6,7 +6,7 @@
 >  基础的使用方式与 API 与 [官方版(Table)](https://vuecomponent.github.io/ant-design-vue/components/table-cn/) 本一致，在其基础上，封装了加载数据的方法。
 > 你无需在你是用表格的页面进行分页逻辑处理，仅需向 Table 组件传递绑定 `:data="Promise"` 对象即可
 
-该 `table` 由 [@Saraka](https://github.com/saraka-tsukai) 完成封装
+该 `table` 由 [@Saraka](https://github.com/saraka) 完成封装
 
 ### 例子1
 
@@ -214,7 +214,7 @@ alert: {
 > 你可能需要为了与后端提供的接口返回结果一致而去修改以下代码：
 (需要注意的是，这里的修改是全局性的，意味着整个项目所有使用该 table 组件都需要遵守这个返回结果定义的字段。)
 
-修改 `@/components/table/index.js`  第 132 行起
+修改 `@/components/table/index.js`  第 139 行起
 
 ```javascript
 result.then(r => {
@@ -309,4 +309,4 @@ result.then(r => {
 更新时间
 ----
 
-该文档最后更新于： 2019-01-21 AM 08:37
+该文档最后更新于： 2019-03-21 AM 10:37
