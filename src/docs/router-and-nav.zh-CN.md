@@ -21,7 +21,7 @@
 - `meta.title` 和 `meta.icon`分别代表生成菜单项的文本和图标。
 - `meta.permission` 用来配置这个路由的权限，如果配置了将会验证当前用户的权限，并决定是否展示。
 - `meta.hidden` 可以强制子菜单不显示在菜单上(和父级 `hideChildrenInMenu` 配合)
-- `meta.hiddenHeaderContent` 可以强制当前页面不显示 [PageHeader](https://github.com/sendya/ant-design-pro-vue/blob/master/src/components/layout/PageHeader.vue#L14) 组件中的页面带的 面包屑和页面标题栏
+- `meta.hiddenHeaderContent` 可以强制当前页面不显示 [PageHeader](https://github.com/sendya/ant-design-pro-vue/blob/dev/v2/src/components/PageHeader/PageHeader.vue#L6) 组件中的页面带的 面包屑和页面标题栏
 
 ### 菜单
 

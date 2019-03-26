@@ -216,18 +216,20 @@ alert: {
 
 修改 `@/components/table/index.js`  第 139 行起
 
+https://github.com/sendya/ant-design-pro-vue/blob/dev/v2/src/components/Table/index.js#L139-L158
+
+
 ```javascript
 result.then(r => {
   this.localPagination = Object.assign({}, this.localPagination, {
-    current: r.pageNo,  // 返回结果中的当前分页数
+    current: r.pageNo, // 返回结果中的当前分页数
     total: r.totalCount, // 返回结果中的总记录数
     showSizeChanger: this.showSizeChanger,
     pageSize: (pagination && pagination.pageSize) ||
       this.localPagination.pageSize
   })
-
   // 为防止删除数据后导致页面当前页面数据长度为 0 ,自动翻页到上一页
-  if (r.data.length == 0 && this.localPagination.current != 1) {
+  if (r.data.length === 0 && this.localPagination.current !== 1) {
     this.localPagination.current--
     this.loadData()
     return
@@ -235,10 +237,11 @@ result.then(r => {
 
   // 这里用于判断接口是否有返回 r.totalCount 或 this.showPagination = false
   // 当情况满足时，表示数据不满足分页大小，关闭 table 分页功能
-  !r.totalCount && ['auto', false].includes(this.showPagination) && (this.localPagination = false)
+
+  (!this.showPagination || !r.totalCount && this.showPagination === 'auto') && (this.localPagination = false)
   this.localDataSource = r.data // 返回结果中的数组数据
   this.localLoading = false
-});
+})
 ```
 ### 返回 JSON 例子
 ```json

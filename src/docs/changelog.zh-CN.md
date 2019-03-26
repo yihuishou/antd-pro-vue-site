@@ -1,5 +1,41 @@
 # 更新日志
 
+### 2.0.0-Pre-release
+
+#### 脚手架
+
+- 💥 优化组件目录结构
+- 💥 优化 `BasicLayout`、`PageView`、`RouteView`
+- 💥 Dashboard/Analysis 增加 线上热门搜索，销售额类别占比 图表例子
+- 💥 优化 `@/components` 导出组件
+- 💥 移动 `ExceptionPage ` 到 `@/components` 下 [cfc3bbc](https://github.com/sendya/ant-design-pro-vue/commit/cfc3bbcddd010b65942a83e84e3362c56a6d64c1)
+- 👎 移除老版本中提供的业务布局例示 
+
+#### 组件
+
+- 💥 同步 React Ant Deisgn Pro 部分组件的 API 
+- 🐛 修正 `s-table` 获取数据在 IE 下兼容性问题，修正不能关闭分页器问题 [#141](https://github.com/sendya/ant-design-pro-vue/pull/141)  [#148](https://github.com/sendya/ant-design-pro-vue/issues/148) 
+- 🐛 修正 `PageView` 被 Keep-Alive 之后导致页面 meta info 被缓存的问题 [#132](https://github.com/sendya/ant-design-pro-vue/issues/132) [5340f48](https://github.com/sendya/ant-design-pro-vue/commit/5340f48374638a469754e207842f23556020d56d)
+- 🔨 修改 vue-cli3 中的 devServer 默认端口为 8000 [fec00eb](https://github.com/sendya/ant-design-pro-vue/commit/fec00eb16ab481d99b07ee20c17d3bcc54d52fd4)
+- 😄 增加 [分步对话框](https://preview.pro.loacg.com/list/table-list) 例子（点列表中的 **配置** 可预览）
+
+> 注意，本版本含破坏性更新，如无必要。无需跟进新版本
+> 推荐新项目采用该版本作为基础模板开发
+
+
+----
+
+### 1.3.2
+
+#### 脚手架
+
+- 💥 修改 路由参数 `alwaysShow` 重命名为 `hideChildrenInMenu`
+- 💥 优化和分离 GlobalLayout 样式 -> `global.less`
+
+#### 组件
+- 🐛 固定 Header 模式下，向下滚动、向上滚动没有触发显示隐藏
+- 👍 Menu 使用 jsx 重构，并且顶部菜单模式下，支持超过长度菜单自动隐藏超过部分菜单为省略符
+- 🐛 `s-table` 在引用了 `polyfill` 之后，无法判断到 `Promise` 条件导致在 IE 下不加载数据 
 
 
 ### 1.3.1
