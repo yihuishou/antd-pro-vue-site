@@ -4,6 +4,7 @@ export default {
       home: '首页',
       docs: '文档',
       components: '组件',
+      v1: 'v1',
       githubRepo: 'Github',
       otherVersion: 'v1',
       langSwitch: 'English',
