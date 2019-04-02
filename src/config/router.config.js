@@ -135,6 +135,11 @@ const componentsRouterMap = [
     url: 'footer-toolbar'
   },
   {
+    title: 'DescriptionList',
+    cnTitle: '描述文本',
+    url: 'description-list'
+  },
+  {
     title: 'NumberInfo',
     cnTitle: '数据文本',
     url: 'number-info'
