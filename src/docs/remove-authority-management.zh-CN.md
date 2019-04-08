@@ -4,7 +4,7 @@
 
 ### 去除路由守卫
 
-移除代码 `src/main.js` 第 10 行 `import '@/permission' // permission control`
+移除代码 `src/main.js` 第 12 行 `import './permission' // permission control`
 
 ### 让菜单生成不经过动态路由
 
@@ -24,12 +24,12 @@ export default new Router({
 })
 ```
 
-增加 `src/components/page/GlobalLayout.vue` 第 79 行起
+增加 `src/layouts/BasicLayout.vue` 第 73 行起
 ```js
 import { asyncRouterMap } from '@/config/router.config.js'
 ```
 
-修改 `src/components/page/GlobalLayout.vue` 第 120 行起
+修改 `src/layouts/BasicLayout.vue` 第 114 行起
 ```js
 created () {
   this.menus = asyncRouterMap.find((item) => item.path === '/').children
@@ -38,4 +38,4 @@ created () {
 },
 ```
 
-更加细节参考 Issue: https://github.com/sendya/ant-design-pro-vue/issues/76
+更多细节参考 Issue: https://github.com/sendya/ant-design-pro-vue/issues/76
