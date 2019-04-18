@@ -6,7 +6,7 @@ Ant Design Pro 是一个企业级中后台前端/设计解决方案，我们秉�
 
 > **本项目默认你有一定的 Vue 基础和 Antd 使用经验,如果你对这些还不熟悉，我们建议你先查阅相关文档** [Vue](https://cn.vuejs.org/)、[Ant Design Vue](https://vue.ant.design/)
 
-我们基于上述目标和提供了以下的典型模板，并据此构建了一套基于 [Ant Design Vue](https://vue.ant.design) 的中后台管理控制台的脚手架，它可以帮助你快速搭建企业级中后台产品原型。
+我们基于上述目标和提供了以下的典型模板，并据此构建了一套基于 [Ant Design Vue](https://vue.ant.design) 的中后台管理控制台的脚手架，他几乎完全和 react 相同布局，它可以帮助你快速搭建企业级中后台产品原型。
 
 
 ```

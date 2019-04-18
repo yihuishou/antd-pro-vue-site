@@ -17,17 +17,17 @@
 目前脚手架中所有的路由都通过 [`router.config.js`](https://github.com/sendya/ant-design-pro-vue/blob/master/src/config/router.config.js) 来统一管理，在 `vue-router` 的配置中我们增加了一些参数，如 `hideChildrenInMenu`,`meta.title`,`meta.icon`,`meta.permission`，来辅助生成菜单。其中：
 
 - `hideChildrenInMenu` 用于隐藏不需要在菜单中展示的子路由。用法可以查看 `分步表单` 的配置。
-- `hidden` 可以在菜单中不展示这个路由，包括子路由。效果可以查看 `dashboard/monitor`页面。
+- `hidden` 可以在菜单中不展示这个路由，包括子路由。效果可以查看 `other` 下的路由配置。
 - `meta.title` 和 `meta.icon`分别代表生成菜单项的文本和图标。
-- `meta.permission` 用来配置这个路由的权限，如果配置了将会验证当前用户的权限，并决定是否展示。
+- `meta.permission` 用来配置这个路由的权限，如果配置了将会验证当前用户的权限，并决定是否展示 *（默认情况下）。
 - `meta.hidden` 可以强制子菜单不显示在菜单上(和父级 `hideChildrenInMenu` 配合)
-- `meta.hiddenHeaderContent` 可以强制当前页面不显示 [PageHeader](https://github.com/sendya/ant-design-pro-vue/blob/dev/v2/src/components/PageHeader/PageHeader.vue#L6) 组件中的页面带的 面包屑和页面标题栏
+- `meta.hiddenHeaderContent` 可以强制当前页面不显示 [PageHeader](https://github.com/sendya/ant-design-pro-vue/tree/master/src/components/PageHeader/PageHeader.vue#L6) 组件中的页面带的 面包屑和页面标题栏
 
 ### 菜单
 
 菜单根据 [`router.config.js`](https://github.com/sendya/ant-design-pro-vue/blob/master/src/config/router.config.js) 生成，具体逻辑在 `src/store/modules/permission.js` 中的 `actions.GenerateRoutes` 方法实现。
 
-> 如果你需要从服务器请求菜单
+> 如果你需要从服务器请求菜单，你可以参考 [/docs/authority-management](权限管理&动态菜单)
 
 ## 需求实例
 
@@ -71,7 +71,7 @@
 
 ```
 
-路由配置项 eg: 
+路由配置项 E.g: 
 ```js
 /**
  * 路由配置说明：
@@ -121,4 +121,5 @@
 
 > 请注意 `component: () => import('..') ` 方式引入路由的页面组件为 懒加载模式。具体可以看 [Vue 官方文档](https://router.vuejs.org/zh/guide/advanced/lazy-loading.html)  
 > 增加新的路由应该增加在 '/' (index) 路由的 `children` 内  
+> 无需控制权限的路由或者需要在未登录情况访问的路由，可以定义在 `/src/config/router.config.js` 下的 `constantRouterMap` 属性中
 > `permission` 可以进行自定义修改，只需要对这个模块进行自定义修改即可 [src/store/modules/permission.js#L10](https://github.com/sendya/ant-design-pro-vue/blob/master/src/store/modules/permission.js#L10)

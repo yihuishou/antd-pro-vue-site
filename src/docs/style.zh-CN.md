@@ -184,7 +184,7 @@ export default {
     font-size: 16px;
 }
 
-// less 亦可用 :global 进行覆盖
+// less CSS modules 时亦可用 :global 进行覆盖
 .test-wrapper {
     :global {
         .ant-select {
