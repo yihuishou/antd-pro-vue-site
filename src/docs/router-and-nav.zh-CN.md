@@ -27,7 +27,7 @@
 
 菜单根据 [`router.config.js`](https://github.com/sendya/ant-design-pro-vue/blob/master/src/config/router.config.js) 生成，具体逻辑在 `src/store/modules/permission.js` 中的 `actions.GenerateRoutes` 方法实现。
 
-> 如果你需要从服务器请求菜单，你可以参考 [/docs/authority-management](权限管理&动态菜单)
+> 如果你需要从服务器请求菜单，你可以参考 [权限管理&动态菜单](/docs/authority-management)
 
 ## 需求实例
 
