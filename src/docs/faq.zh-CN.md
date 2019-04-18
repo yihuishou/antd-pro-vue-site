@@ -6,14 +6,6 @@
 
 可以理解为 Ant Design Vue 是一套 Vue 组件库，而 Pro 是使用了这套组件库的完整前端脚手架。
 
-### 如何使用 Ant Design Pro？
-
-请阅读文档 [开始使用](/docs/getting-started)
-
-### 是否可以在生产环境中使用 Ant Design Pro？
-
-当然可以！Ant Design Pro 基于最新的 antd vue 版本开发，目前已有多个中后台项目正在使用。
-
 ### 如何更新 Ant Design Pro？
 
 - 单独升级 `antd` 版本，用于更新基础组件。
@@ -24,6 +16,7 @@
 ### 如何修改默认 webpack 配置？
 
 详见 [CLI3 配置](https://cli.vuejs.org/)。
+
 ### 如何使用图片等静态资源？
 
 可以直接使用绝对路径（需要图床支持），若需直接使用本地文件，可按以下方式引入。
@@ -73,6 +66,9 @@ or
 $ npm i node-sass sass-loader --save
 ```
 
+### 项目启动起来后 `sock-js` 跨域？
+
+请确认你是否在非 8000 端口下运行。如果 8000 被占用，应当手动修改 devServer 配置下的端口号
 
 ### 站点是否支持国际化？
 

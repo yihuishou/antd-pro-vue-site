@@ -1,5 +1,25 @@
 # 更新日志
 
+> 这里记录了一些脚手架的版本改动项
+
+### 2.0.0
+
+- 😄 增加 TagSelect
+- 😄 增加 Analysis Pie 图表
+- 😄 增加 TagCloud 组件
+- 😄 增加 List/article 页面布局
+- 🔨 更换首页 Loading 动画 https://github.com/sendya/ant-design-pro-vue/commit/ccdcc5a903ffe16bc6f3d765834abc7a26094deb
+- 🔨 修正 头部栏 向下滚动时，隐藏动画 #155 
+- 🔨 修正 登录，注册 页面的 form 升级为官方推荐使用方式
+- 🔨 增加 MockJS 来模拟数据，移除 easy-mock
+- 🔨 同步 设置栏样式 
+- 🔨 同步 AdvancedForm 页面 #186 #192
+- 💥 重构 `Result` 组件 https://github.com/sendya/ant-design-pro-vue/commit/24e036d003a14c6ab1fcc40779460a8d6cc422d4
+- 🐛 修正 s-table 没分页时，无限循环加载接口
+
+> 注意，从 1.x 到 2.x 含破坏性更新，如无必要。无需跟进新版本
+> 推荐新项目采用该版本作为基础模板开发
+
 ### 2.0.0-Pre-release
 
 #### 脚手架
