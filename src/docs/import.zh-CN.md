@@ -1,6 +1,6 @@
 # 引入外部模块
 
-除了 `ant-design-vue` 组件以及脚手架内置的业务组件，有时我们还需要引入其他外部模块，这里以引入富文本组件 [vue-quill-editor](https://www.npmjs.com/package/vue-quill-editor) 为例进行介绍。
+除了 `ant-design-vue` 组件以及脚手架内置的业务组件，有时我们还需要引入其他外部模块，这里以引入富文本组件 [vue-quill-editor](https://www.npmjs.com/package/vue-quill-editor) 为例进行介绍，如果该组件已更新引入方式，可直接自行前往组件首页查看如何引入，并以官方为准。
 
 ---
 
@@ -23,7 +23,12 @@ $ npm install vue-quill-editor --save
 import Vue from 'vue'
 import VueQuillEditor from 'vue-quill-editor'
 
-Vue.use(VueQuillEditor)
+// require styles
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+Vue.use(VueQuillEditor, /* { default global options } */)
 ```
 
 
@@ -44,6 +49,9 @@ Vue.use(VueQuillEditor)
 </template>
 
 <script>
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
 import { quillEditor } from 'vue-quill-editor'
 
 export default {
