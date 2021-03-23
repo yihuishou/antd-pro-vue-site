@@ -2,20 +2,24 @@
   <div class="main-wrapper">
     <a-row>
       <a-col class="main-menu" :xs="24" :sm="24" :md="24" :lg="6" :xl="5" :xxl="4">
-        <a-menu
-          class="aside-container"
-          mode="inline"
-          @click="handleClick"
-          :selectedKeys="selectedKeys"
-          :inlineIndent="54"
-        >
-          <a-menu-item v-for="item in componentsRouterMap" :key="item.url">
-            <router-link :to="{ name: 'components', params: { page: item.url } }">
-              <span>{{ item.title }}</span>
-              <span v-if="isCN" class="chinese">{{ item.cnTitle }}</span>
-            </router-link>
-          </a-menu-item>
-        </a-menu>
+        <a-affix :offset-top="0">
+          <section class="main-menu-inner">
+          <a-menu
+            class="aside-container"
+            mode="inline"
+            @click="handleClick"
+            :selectedKeys="selectedKeys"
+            :inlineIndent="54"
+          >
+            <a-menu-item v-for="item in componentsRouterMap" :key="item.url">
+              <router-link :to="{ name: 'components', params: { page: item.url } }">
+                <span>{{ item.title }}</span>
+                <span v-if="isCN" class="chinese">{{ item.cnTitle }}</span>
+              </router-link>
+            </a-menu-item>
+          </a-menu>
+        </section>
+        </a-affix>
       </a-col>
       <a-col class="main-container" :xs="24" :sm="24" :md="24" :lg="18" :xl="19" :xxl="20">
         <div class="markdown" v-html="marked(text)">
@@ -88,8 +92,11 @@ export default {
     },
     updateMenu () {
       const { $route: { params }, $message } = this
+      if (!params.page) {
+        return
+      }
       this.selectedKeys = [params.page]
-      const md = mdImport(params.page, 'zh-CN')
+      const md = mdImport(params.page, this.currentLang)
       console.log('import markdown:', md)
       md.then((...rest) => {
         this.text = rest[0].default
@@ -101,6 +108,9 @@ export default {
   },
   watch: {
     $route () {
+      this.updateMenu()
+    },
+    currentLang () {
       this.updateMenu()
     }
   }

@@ -7,8 +7,8 @@
 
 <script>
 // @ is an alias to /src
-import Banner from '@/components/Banner'
-import Page1 from '@/components/Page1'
+import Banner from '@/components/home/Banner'
+import Page1 from '@/components/home/Page1'
 
 export default {
   name: 'home',

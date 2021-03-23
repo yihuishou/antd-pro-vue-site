@@ -1,13 +1,15 @@
 <template>
   <div id="header" class="header">
     <a-row>
-      <a-col :xs="24" :sm="24" :md="8" :lg="8" :xl="5" :xxl="4">
+      <a-col :xs="4" :sm="4" :md="8" :lg="8" :xl="5" :xxl="4">
         <router-link id="logo" :to="{ name: 'home' }">
-          <img src="https://cdn.nlark.com/yuque/0/2019/png/87084/1550242977163-assets/web-upload/5bdc08bb-58a1-4312-8380-d43b1590154c.png" alt="logo"/>
-          <span>Ant Design Pro of Vue</span>
+          <img src="/logo.png" alt="logo"/>
+          <a-badge count="Vue" :number-style="{ right: '-10px' }">
+            <span>Ant Design Pro</span>
+          </a-badge>
         </router-link>
       </a-col>
-      <a-col :xs="0" :sm="0" :md="16" :lg="16" :xl="19" :xxl="20">
+      <a-col :xs="20" :sm="20" :md="16" :lg="16" :xl="19" :xxl="20">
         <div id="search-box">
           <a-icon type="search" />
           <a-select
@@ -35,7 +37,7 @@
             <a-button @click="langSwitch">{{ $t('header.Menu.langSwitch') }}</a-button>
           </div>
           <div id="menu">
-            <a-menu mode="horizontal" :selectedKeys="selectedKeys" @select="handleSelect">
+            <a-menu mode="horizontal" :selectedKeys="selectedKeys" @click="handleMenuClick">
               <a-menu-item key="home">
                 <router-link :to="{ name: 'home' }">
                   {{ $t('header.Menu.home') }}
@@ -87,8 +89,9 @@ export default {
     }
   },
   methods: {
-    handleSelect ({ selectedKeys }) {
-      this.selectedKeys = selectedKeys
+    handleMenuClick ({ item, key, keyPath }) {
+      console.log('item', item, key, keyPath)
+      this.selectedKeys = keyPath
     },
     handleSearch (value) {
 
@@ -103,9 +106,9 @@ export default {
     },
     langSwitch () {
       if (this.currentLang === config.defaultLang) {
-        this.setLang('zh-CN')
-      } else {
         this.setLang('en-US')
+      } else {
+        this.setLang('zh-CN')
       }
     }
   }

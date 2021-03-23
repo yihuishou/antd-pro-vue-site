@@ -1,16 +1,4 @@
 'use strict'
-const path = require('path')
+const webpackConfig = require('@vue/cli-service/webpack.config.js')
 
-function resolve (dir) {
-  return path.join(__dirname, '.', dir)
-}
-
-module.exports = {
-  context: path.resolve(__dirname, './'),
-  resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
-      '@': resolve('src')
-    }
-  }
-}
+module.exports = webpackConfig

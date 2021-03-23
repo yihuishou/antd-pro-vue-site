@@ -6,7 +6,7 @@
 
 
 
-在 Ant Design Pro 中，我们抽离了使用过程中的通用布局，都放在 `/components/layouts` 目录中，分别为：
+在 Ant Design Pro 中，我们抽离了使用过程中的通用布局，都放在 `/layouts` 目录中，分别为：
 
 - BasicLayout：基础页面布局，包含了头部导航，侧边栏和通知栏：
 
@@ -103,13 +103,7 @@ export default [
     }
 }
 ```
-
-- `hidden`: 当前路由从菜单中隐藏，但是路由然后可以访问到。
-- `hideChildrenInMenu`: 当前路由显示为没有子路由的菜单`Menu.Item`。并且从菜单上隐藏该路由下的所有子菜单。
-- `meta.icon`: 当前路由在菜单下的图标名。
-- `meta.title`: 当前路由在菜单和面包屑中的名称
-- `meta.keepAlive`: 缓存页面
-- `meta.permission`: 允许展示的权限，不设则都可见，详见：[权限管理](/docs/authority-management)。
+> 更多可配置属性，请参考 [路由和菜单](/docs/router-and-nav)
 
 ## Ant Design 布局组件
 
@@ -129,4 +123,4 @@ export default [
 
 在大部分场景下，我们需要基于上面两个组件封装一些适用于当下具体业务的组件，包含了通用的导航、侧边栏、顶部通知、页面标题等元素。例如 Ant Design Pro 的 [BasicLayout](https://github.com/sendya/ant-design-pro-vue/blob/master/src/components/layouts/BasicLayout.vue)。
 
-通常，我们会把抽象出来的布局组件，放到跟  `components`  和  `components/layouts` 文件夹中方便管理。需要注意的是，这些布局组件和我们平时使用的其它组件并没有什么不同，只不过功能性上是为了处理布局问题。
+通常，我们会把抽象出来的布局组件，放到跟  `components`  和  `layouts` 文件夹中方便管理。需要注意的是，这些布局组件和我们平时使用的其它组件并没有什么不同，只不过功能性上是为了处理布局问题。

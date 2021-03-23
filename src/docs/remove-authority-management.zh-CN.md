@@ -4,7 +4,7 @@
 
 ### 去除路由守卫
 
-移除代码 `src/main.js` 第 12 行 `import './permission' // permission control`
+移除代码 `src/main.js` 第 15 行 `import './permission' // permission control`
 
 ### 让菜单生成不经过动态路由
 
@@ -39,3 +39,5 @@ created () {
 ```
 
 更多细节参考 Issue: https://github.com/sendya/ant-design-pro-vue/issues/76
+
+> 本文中提到的代码行,有可能在后期的更新迭代中变化, 如果找不到时,请根据内容说明,找到正确位置, 也可以创建 issue 咨询更新后的代码行位置.

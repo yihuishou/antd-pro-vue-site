@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import config from '@/config/default.config'
-import enUS from './lang/en-US'
+import zhCN from './lang/zh-CN'
 
 Vue.use(VueI18n)
 
 const messages = {
-  'en-US': {
-    ...enUS
+  'zh-CN': {
+    ...zhCN
   }
 }
 

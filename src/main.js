@@ -12,8 +12,6 @@ new Vue({
   router,
   store,
   i18n,
-  beforeCreate () {
-    bootstrap.init()
-  },
+  beforeCreate: bootstrap.init,
   render: h => h(App)
 }).$mount('#app')

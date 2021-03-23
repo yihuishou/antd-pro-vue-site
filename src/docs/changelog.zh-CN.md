@@ -2,6 +2,26 @@
 
 > 这里记录了一些脚手架的版本改动项
 
+### 2.0.2
+- 🐛 修正 配置栏 配置的结果复制后错误
+- 🐛 修正 `s-table` 设置 `checkbox` props 无效，关闭分页器失效 的问题
+- 🐛 修正 个人中心 子菜单在一些情况下不随着路由变化而更新选中的页面菜单
+- 🐛 修正 注册页面的 密码级别校验提示框 在切换页面或注册完毕后，依然现实在页面中的问题
+- 🔨 还原 Layout 滚动条为 react antd pro 相同设定
+- 🔨 更新 `webpack-theme-color-replacer` 动态更换主题色的实现方式 [#8f76001](https://github.com/sendya/ant-design-pro-vue/commit/8f7600143be405cf8de6c950070ac7a80abb1235) [@hzsrc](https://github.com/hzsrc)
+- 😄 增加 `PageView` 的 props 参数
+- 😄 增加 `WangEditor`, `QuillEditor` 富文本组件，已兼容 a-form 表单校验和值收集
+
+### 2.0.1
+- 🐛 修正 `Header` Logo 区域没有阴影
+- 🔨 移除 `production` 环境的 sourcemap 减小部署大小
+- 😄 增加 搜索列表 下的 项目，应用 列表模板
+- 😄 增加 个人中心 的 文章，项目 页面模板
+- 🔨 修正 非 `yarn` 包管理工具时，不安装 `core-js` 的包依赖问题
+- 🐛 修正 仅一级菜单 刷新页面时无法被选中高亮 的问题 
+- 🐛 修正 `s-table` 有子表数据时，展开控制按钮 错位的问题 #243 
+
+
 ### 2.0.0
 
 - 😄 增加 TagSelect
@@ -41,7 +61,6 @@
 
 > 注意，本版本含破坏性更新，如无必要。无需跟进新版本
 > 推荐新项目采用该版本作为基础模板开发
-
 
 ----
 
@@ -107,7 +126,8 @@
 - 💥 升级支持库 `Ant Design Vue`.`1.3.2`
 - 🐛  修正侧边栏过高不显示滚动条的问题
 > 侧边栏固定模式下，overflow 特性修改(鼠标在菜单上 如果菜单高度超出，则显示竖向滚动条)
-- 🐛  修正 IE 下 `dom.remove()` 方法不存在问题
+>
+> - 🐛  修正 IE 下 `dom.remove()` 方法不存在问题
 - 🐛 修正 `keep-alive` 使用错误的问题
 - 💥 项目样式 `scss` 全部转换为 `less`，且移除了项目 `node-sass` 依赖
 - 💥 升级 `eslint`，自动修正规则影响的文件

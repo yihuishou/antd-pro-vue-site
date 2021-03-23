@@ -40,7 +40,10 @@
       </a-row>
     </div>
     <div class="footer-bar">
-      Made with <span class="heart">❤</span> by <a target="_blank" rel="noopener noreferrer" href="https://i.loacg.com/">Sendya</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/kokoroli" alt="kokoroli">晴心</a> · Inspired <a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog"><span>AFX</span></a> · <a target="_blank" rel="noopener noreferrer" href="https://vue.ant.design/docs/vue/introduce-cn/"><span>Ant Design of Vue</span></a>
+      <p>Made with <span class="heart">❤</span> by <a target="_blank" rel="noopener noreferrer" href="https://i.loacg.com/">Sendya</a>, <a target="_blank" rel="noopener noreferrer" href="https://github.com/kokoroli" alt="kokoroli">晴心</a></p>
+      <p>Translate by <a target="_blank" rel="noopener noreferrer" href="https://github.com/jiyu93" alt="jiyu93">Jiyu Lin</a></p>
+      <p>Inspired <a target="_blank" rel="noopener noreferrer" href="https://yuque.com/afx/blog"><span>AFX</span></a> · <a target="_blank" rel="noopener noreferrer" href="https://vue.ant.design/docs/vue/introduce-cn/"><span>Ant Design of Vue</span></a></p>
+      <p><a href="http://beian.miit.gov.cn/" target="_blank" rel="external nofollow">闽ICP备14016243号-1</a></p>
     </div>
   </div>
 </template>

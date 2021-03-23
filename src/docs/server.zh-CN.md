@@ -1,6 +1,6 @@
 # 和服务端进行交互
 
-Ant Design Pro 是一套基于 Vue 技术栈的单页面应用，我们提供的是前端代码和 `easy-mock` 模拟数据的开发模式，
+Ant Design Pro 是一套基于 Vue 技术栈的单页面应用，我们提供的是前端代码和 `mock` 模拟数据的开发模式，
 通过 API 的形式和任何技术栈的服务端应用一起工作。下面将简单介绍和服务端交互的基本写法。
 
 
@@ -32,7 +32,7 @@ api/
 
 ```js
 // api/user.js
-import { axios } fromm '@/utils/request'
+import { axios } from '@/utils/request'
 
 const api = {
     info: '/user',
@@ -128,3 +128,9 @@ export default {
 }
 </script>
 ```
+
+## Mock 
+
+- 有关项目默认使用的 `mockjs` 默认情况下在 `production` 是不生效的，所以直接不经过任何修改就编译出来，是无法看到效果的。
+- Mock 在 `main.js` 中经行引入，你可以查看该文件的源代码，并找到 `import './mock'` 这样的代码。（去除它 可完整的将项目中的 mock 拦截去除）
+- 如果想与 preview 一样，在生产环境也能使用 mock，则需要修改 `src/mock/index.js` 中的环境判断，这一些内容则需要自己理解并修改了。

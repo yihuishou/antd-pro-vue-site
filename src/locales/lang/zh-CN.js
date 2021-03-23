@@ -15,6 +15,6 @@ export default {
   banner: {
     preview: '预览',
     getter: '开始使用',
-    desc: '开箱即用的中台前端/设计解决方案'
+    desc: '基于 Ant Design Vue 的 Pro 第三方实现'
   }
 }

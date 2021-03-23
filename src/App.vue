@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="page-wrapper" :class="mainClass ? 'index-page-wrapper' : null">
+    <div class="page-wrapper" :class="[mainClass ? 'index-page-wrapper' : null, device]">
       <a-header/>
       <router-view/>
       <a-footer />
@@ -12,13 +12,11 @@
 // @ is an alias to /src
 import AHeader from '@/components/Header'
 import AFooter from '@/components/Footer'
+import { AppDeviceEnquire } from '@/utils/device'
 
 export default {
   name: 'home',
-  components: {
-    AHeader,
-    AFooter
-  },
+  mixins: [AppDeviceEnquire],
   data () {
     return {
       mainClass: false
@@ -26,9 +24,12 @@ export default {
   },
   methods: {
     setMainClass (bool) {
-      console.log('main class', bool)
       this.mainClass = bool
     }
+  },
+  components: {
+    AHeader,
+    AFooter
   }
 }
 </script>

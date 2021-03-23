@@ -26,10 +26,23 @@
 
 .main-menu {
   z-index: 1;
+
+  .main-menu-inner {
+    max-height: 100vh;
+    overflow-y: hidden;
+
+    &:hover{
+      overflow-y: auto;
+    }
+  }
 }
+
+
 
 .aside-container {
   /*border-right: unset!important;*/
+  /* 为了防止最底部的菜单被挡住 往下撑开 64px */
+  margin-bottom: 64px;
 
   .ant-menu-item-group-title {
     padding-left: 40px;

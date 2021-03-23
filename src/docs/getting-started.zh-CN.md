@@ -4,9 +4,11 @@
 
 Ant Design Pro 是一个企业级中后台前端/设计解决方案，我们秉承 [Ant Design](http://ant.design/) 的设计价值观，致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。随着『设计者』的不断反馈，我们将持续迭代，逐步沉淀和总结出更多设计模式和相应的代码实现，阐述中后台产品模板/组件/业务场景的最佳实践，也十分期待你的参与和共建。
 
-> **本项目默认你有一定的 Vue 基础和 Antd 使用经验,如果你对这些还不熟悉，我们建议你先查阅相关文档** [Vue](https://cn.vuejs.org/)、[Ant Design Vue](https://vue.ant.design/)
+> **本项目默认你有一定的 Vue 基础和 Antd 使用经验,如果你对这些还不熟悉，我们建议你先查阅相关文档** [Vue](https://cn.vuejs.org/)、[Ant Design Vue](https://antdv.com/)
 
-我们基于上述目标和提供了以下的典型模板，并据此构建了一套基于 [Ant Design Vue](https://vue.ant.design) 的中后台管理控制台的脚手架，他几乎完全和 react 相同布局，它可以帮助你快速搭建企业级中后台产品原型。
+### **特别提示：使用本项目，请仔细查阅 src/main.js 中引入哪些依赖**
+
+我们基于上述目标和提供了以下的典型模板，并据此构建了一套基于 [Ant Design Vue](https://antdv.com/) 的中后台管理控制台的脚手架，她几乎完全和 react 相同布局，它可以帮助你快速搭建企业级中后台产品原型。
 
 
 ```
@@ -93,11 +95,13 @@ $ yarn install
 ```
 
 > 如果网络状况不佳，可以使用 [cnpm](https://cnpmjs.org/) 进行加速，并使用 `cnpm` 代替 `yarn`
+> 或者设置 yarn 的 npm 加载源，如 `yarn config set registry https://registry.npm.taobao.org`
 
 ```bash
 $ yarn run serve
 ```
 
 启动完成后会自动打开浏览器访问 [http://localhost:8000](http://localhost:8080)，你看到下面的页面就代表成功了。
+![](/assets/user_layout.jpg)
 
 接下来你可以修改代码进行业务开发了，我们内建了典型业务模板、常用业务组件、全局路由等等各种实用的功能辅助开发，你可以继续阅读和探索左侧的其他文档。

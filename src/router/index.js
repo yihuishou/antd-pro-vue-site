@@ -11,8 +11,10 @@ export default new Router({
   scrollBehavior (to, from, savedPosition) {
     if (to.hash) {
       return {
-        selector: to.hash
+        // selector: to.hash
       }
+    } else {
+      return { y: 0 }
     }
   }
 })

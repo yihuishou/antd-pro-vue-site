@@ -8,9 +8,7 @@
 
 ![新增页面](/assets/new_page1.png)
 
-
-
-样式文件默认使用 [CSS Modules](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，如果需要，你可以在`vue`文件的`style`标签头部引入 [antd 样式变量文件](https://github.com/vueComponent/ant-design-vue/blob/master/components/style/themes/default.less)：
+样式文件默认使用 [Less](https://less.bootcss.com/)，如果需要，你可以在`vue`文件的`style`标签头部引入 [antd 样式变量文件](https://github.com/vueComponent/ant-design-vue/blob/master/components/style/themes/default.less)：
 
 ![引用样式文件](/assets/new_page2.png)
 

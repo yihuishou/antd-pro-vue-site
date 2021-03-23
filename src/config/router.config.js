@@ -2,7 +2,24 @@ import Home from '@/views/Home'
 
 const docsRouterMap = [
   {
+    title: '引导',
+    enTitle: 'Other',
+    children: [
+      {
+        title: '更新日志',
+        enTitle: 'ChangeLog',
+        url: 'changelog'
+      },
+      {
+        title: '常见问题',
+        enTitle: 'FAQ',
+        url: 'faq'
+      }
+    ]
+  },
+  {
     title: '入门',
+    enTitle: 'Introduction',
     children: [
       {
         title: '开始使用',
@@ -53,12 +70,13 @@ const docsRouterMap = [
   },
   {
     title: '进阶',
+    enTitle: 'Advanced',
     children: [
-      {
+      /*      {
         title: '图表',
         enTitle: 'Charts',
         url: 'graph'
-      },
+      }, */
       {
         title: '业务图标',
         enTitle: 'BIZ Icon',
@@ -90,26 +108,6 @@ const docsRouterMap = [
         url: 'remove-authority-management'
       }
     ]
-  },
-  {
-    title: '其他',
-    children: [
-      {
-        title: '更新日志',
-        enTitle: 'ChangeLog',
-        url: 'changelog'
-      },
-      {
-        title: '常见问题',
-        enTitle: 'FAQ',
-        url: 'faq'
-      },
-      {
-        title: '设计资源',
-        enTitle: 'Design Kit',
-        url: 'resource'
-      }
-    ]
   }
 ]
 
@@ -136,7 +134,7 @@ const componentsRouterMap = [
   },
   {
     title: 'DescriptionList',
-    cnTitle: '描述文本',
+    cnTitle: '描述文本（废弃）',
     url: 'description-list'
   },
   {
@@ -151,7 +149,7 @@ const componentsRouterMap = [
   },
   {
     title: 'Result',
-    cnTitle: '处理结果',
+    cnTitle: '处理结果（废弃）',
     url: 'result'
   },
   {
@@ -170,14 +168,14 @@ const componentsRouterMap = [
     url: 'icon-selector'
   },
   {
-    title: 'TwoStepCaptcha',
-    cnTitle: '两步验证 FMA',
-    url: 'two-step-captcha'
-  },
-  {
     title: 'ActionPermission',
     cnTitle: '操作权限',
     url: 'action-permission'
+  },
+  {
+    title: 'TwoStepCaptcha',
+    cnTitle: '两步验证 FMA',
+    url: 'two-step-captcha'
   }
 ]
 
